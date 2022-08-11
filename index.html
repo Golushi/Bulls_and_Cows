@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulls and Cows</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="bg">
+    <main>
+        <h1>Bulls and Cows</h1>
+        <section>
+            <p id="gameStats">R: 1 | V: 0 | D: 0</p>
+            <input 
+            type="number" 
+            id="guessInput" 
+            min="1111" 
+            max="9999" 
+            placeholder="ex: 4562" 
+            onkeydown="if (event.keyCode === 13) document.getElementById('submitButton').click()">
+            <input type="submit" id="submitButton" value="guess" onclick="checkGuess()">
+            <input type="submit" id="rulesButton" value="Rules" onclick="printRules()">
+            <input type="submit" id="clearButton" value="Clear" onclick="clearLogs()">
+        </section>
+        <h2>Logs</h2>
+        <section>
+           <textarea name="logs" id="logsArea" cols="60" rows="17" readonly="true"></textarea>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.cells.min.js"></script>
+    <script>
+    VANTA.CELLS({
+      el: "#bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      color1: 0x525252,
+      color2: 0xf20808,
+      size: 1.50,
+      speed: 1.20
+    })
+    </script>
+</body>
+</html>
